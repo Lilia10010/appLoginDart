@@ -33,9 +33,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     let username = localStorage.getItem("user");
 
     /* if (token) {
-      api.get("/me").then((response) => {
-        console.log("response", response);
-      });
+      console.log("response", response);
     } */
     if (username) {
       setUser({ username });
@@ -43,7 +41,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }, []);
 
   async function SignIn({ username, password }: SignInCredentials) {
-    console.log(JSON.stringify({ username, password }));
     try {
       const response = await api.post("/auth/login", {
         headers: { "Content-Type": "application/json" },
@@ -54,25 +51,14 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
       localStorage.setItem("authToken", token);
       localStorage.setItem("user", username);
+
       setUser({
         username,
       });
       navigate("/home");
-      console.log(response.data);
     } catch (err) {
       console.log(err);
     }
-    /*  fetch("https://dummyjson.com/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        username: "kminchelle",
-        password: "0lelplR",
-        // expiresInMins: 60, // optional
-      }),
-    })
-      .then((res) => res.json())
-      .then(); */
   }
 
   return (

@@ -12,7 +12,6 @@ const Login = () => {
   const { SignIn } = useContext(AuthContext);
 
   async function handleSubmit(e: FormEvent) {
-    console.log("vrau");
     e.preventDefault();
     const data = {
       username,
