@@ -23,10 +23,6 @@ Baixe o repositório ou acesse os links abaixo:
 
 [Página de Login](https://)
 
-## 🔖 Layout
-
-Layout do projeto através [desse link](https://www.figma.com/file/FnTOK15dbxgyBC2JqTMEpy/E-carros?node-id=5762%3A29121x).
-
 ### Após baixar o projeto instale as dependências:
 
 `yarn`
